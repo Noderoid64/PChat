@@ -1,0 +1,42 @@
+// Import material theming functions
+@import '~@angular/material/theming';
+@import 'themes/theme.scss';
+
+// Specific palette
+$dark-background-palette: (
+    dark: map-get($mat-grey, 900),
+    base: map-get($mat-grey, 800),
+    ligth: map-get($mat-grey, 700),
+);
+$light-background-palette: (
+    dark: map-get($mat-grey, 400),
+    base: map-get($mat-grey, 300),
+    ligth: map-get($mat-grey, 200),
+);
+
+// Current theme palette
+$primary-palette: map-get(map-get($theme, color), primary);
+$accent-palette:  map-get(map-get($theme, color), accent);
+$warn-palette:    map-get(map-get($theme, color), warn);
+$background-palette: if(map-get(map-get($theme, color), is-dark), $dark-background-palette, $light-background-palette );
+
+// Colors
+$background-dark: map-get($background-palette, dark);
+$background-base: map-get($background-palette, base);
+$background-light: map-get($background-palette, ligth);
+
+$primary-dark: map-get($primary-palette, 800);
+$primary-base: map-get($primary-palette, 500);
+$primary-light: map-get($primary-palette, 300);
+
+$accent-dark: map-get($accent-palette, 800);
+$accent-base: map-get($accent-palette, 500);
+$accent-light: map-get($accent-palette, 300);
+
+$warn-dark: map-get($warn-palette, 800);
+$warn-base: map-get($warn-palette, 500);
+$warn-light: map-get($warn-palette, 300);
+
+
+$materia-border-radius: 4px;
+

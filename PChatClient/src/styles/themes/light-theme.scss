@@ -1,0 +1,17 @@
+@import '~@angular/material/theming';
+
+$candy-app-primary: mat-palette($mat-indigo);
+$candy-app-accent:  mat-palette($mat-yellow, A200, A100, A400);
+$candy-app-warn:    mat-palette($mat-red);
+
+$light-app-theme: mat-light-theme((
+  color: (
+    primary: $candy-app-primary,
+    accent: $candy-app-accent,
+    warn: $candy-app-warn,  
+  )
+));
+
+.light-theme {
+    @include angular-material-color($light-app-theme);
+}

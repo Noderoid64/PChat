@@ -1,0 +1,17 @@
+@import '~@angular/material/theming';
+
+$app-primary: mat-palette($mat-light-blue);
+$app-accent:  mat-palette($mat-yellow, A200, A100, A400);
+$app-warn:    mat-palette($mat-red);
+
+$dark-app-theme: mat-dark-theme((
+  color: (
+    primary: $app-primary,
+    accent: $app-accent,
+    warn: $app-warn,  
+  )
+));
+
+.dark-theme {
+    @include angular-material-color($dark-app-theme);
+}

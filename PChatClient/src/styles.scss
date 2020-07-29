@@ -1,0 +1,8 @@
+@import 'themes/dark-theme';
+@include mat-core();
+
+@include angular-material-theme($dark-app-theme);
+
+body {
+  margin: 0px;
+}

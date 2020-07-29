@@ -1,0 +1,26 @@
+@import 'variables';
+
+.auth-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .auth-form {
+        .auth-form-footer {
+            display: flex;
+            justify-content: center;
+            botton {
+                padding-left: 0px;
+            }
+            .auth-img {
+                width: 64px;
+                height: 64px;
+            }
+            .auth-img-disabled {
+                opacity: 0.5;
+            }
+        }
+        
+    }
+}
