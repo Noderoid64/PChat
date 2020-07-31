@@ -7,11 +7,13 @@ $dark-background-palette: (
     dark: map-get($mat-grey, 900),
     base: map-get($mat-grey, 800),
     ligth: map-get($mat-grey, 700),
+    lightest: map-get($mat-grey, 600)
 );
 $light-background-palette: (
     dark: map-get($mat-grey, 400),
     base: map-get($mat-grey, 300),
     ligth: map-get($mat-grey, 200),
+    lightest: map-get($mat-grey, 50)
 );
 
 // Current theme palette
@@ -24,6 +26,7 @@ $background-palette: if(map-get(map-get($theme, color), is-dark), $dark-backgrou
 $background-dark: map-get($background-palette, dark);
 $background-base: map-get($background-palette, base);
 $background-light: map-get($background-palette, ligth);
+$background-lightest: map-get($background-palette, lightest);
 
 $primary-dark: map-get($primary-palette, 800);
 $primary-base: map-get($primary-palette, 500);

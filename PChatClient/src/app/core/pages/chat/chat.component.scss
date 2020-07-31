@@ -14,57 +14,28 @@
     width: 800px;
     padding: 0px;
     display: flex;
-    flex-flow: row;
-    .chat-menu {
-        width: 30%;
-        height: 100%;
-        border-top-left-radius: $materia-border-radius;
-        border-bottom-left-radius: $materia-border-radius;
+    flex-flow: column;
+    .chat-header {
+        height: 10%;
+        width: 100%;
         background-color: $primary-dark;
-        padding: 0px;
-        .chat-menu-header{
-            height: 15%;
-            .chat-menu-search-holder {
-                padding-top: 16px;
-                padding-left: 16px;
-                padding-right: 16px;
-                padding-bottom: 0px;
-            }
-        }
-        .chat-menu-body {
-            height: 70%;
-        }
-        .chat-menu-footer {
-            height: 15%;
-            display: flex;
-            flex-flow: column;
-            justify-content: center;
-            .add-botton-holder {
-                padding-left: 16px;
-            }
+        border-top-right-radius: $materia-border-radius;
+        border-top-left-radius: $materia-border-radius;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        mat-icon {
+            margin-right: 16px;
         }
     }
-    .chat-chat {
-        width: 70%;
-        height: 100%;
-        border-top-right-radius: $materia-border-radius;
-        border-bottom-right-radius: $materia-border-radius;
-        background-color: $background-base;
-        .chat-chat-header {
-            height: 15%;
-            
-            
-            margin: 16px;
-            padding-left: 16px;
-            .chat-header-card {
-                display: flex;
-                align-items: center;
-                background-color: $background-light;
-                span {
-                    margin: 0px;
-                }
-            }
-            
+    .chat-body {
+        height: 90%;
+        width: 100%;
+        .chat-body-sidebar {
+            width: 30%;
+            height: 100%;
+            overflow-y: overlay;
+            overflow-x: hidden;
         }
     }
 }

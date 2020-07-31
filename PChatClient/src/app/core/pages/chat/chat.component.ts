@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChatFacadeService } from 'app/core/services/chat-facade.service';
 
 @Component({
   selector: 'app-chat',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatComponent implements OnInit {
 
-  constructor() { }
+  constructor(private chatFacade: ChatFacadeService) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    this.chatFacade.getProfile().then(profile => console.log(profile));
   }
 
 }

@@ -45,5 +45,9 @@ namespace Infrastructure.Db.Repositories
         {
             context.Set<T>().Remove(entity);
         }
+
+        public void Save() {
+            context.SaveChanges();
+        }
     }
 }

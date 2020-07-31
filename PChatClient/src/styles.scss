@@ -1,8 +1,13 @@
-@import 'themes/dark-theme';
+@import 'themes/theme';
+@import 'variables';
 @include mat-core();
 
-@include angular-material-theme($dark-app-theme);
+@include angular-material-theme($theme);
 
 body {
   margin: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }

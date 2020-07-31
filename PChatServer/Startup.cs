@@ -12,6 +12,8 @@ using Microsoft.Extensions.Hosting;
 using Infrastructure.Db;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using Infrastructure;
+using Infrastructure.Db.Repositories;
 
 namespace PChatServer
 {
@@ -28,12 +30,21 @@ namespace PChatServer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped(typeof(GoogleProfileDtoAssembler));
+            services.AddScoped(typeof(ProfileRepository));
             services.AddDbContext<PChatDbContext>(options => options.UseNpgsql("Host=localhost;Port=5432;Database=PChat;Username=postgres;Password=qwertyui"));
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                     .AllowAnyMethod()
+                    .AllowAnyHeader();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors("MyPolicy");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
