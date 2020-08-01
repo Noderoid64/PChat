@@ -5,12 +5,14 @@ import { SharedModule } from '@shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ChatComponent } from './pages/chat/chat.component';
 import { ProfilesListComponent } from './pages/chat/components/profiles-list/profiles-list.component';
+import { AddProfileDialogComponent } from './pages/chat/components/add-profile-dialog/add-profile-dialog.component';
 
 @NgModule({
   declarations: [
     AuthComponent,
     ChatComponent,
-    ProfilesListComponent
+    ProfilesListComponent,
+    AddProfileDialogComponent
   ],
   imports: [
     CommonModule,

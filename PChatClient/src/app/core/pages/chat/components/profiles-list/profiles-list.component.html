@@ -1,6 +1,7 @@
 <div class="profiles-list-wrapper">
-    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-        <mat-card class="profile-item mat-subheading-1" *ngFor="let profile of profiles" cdkDrag>
+    <div class="example-list">
+        <mat-card class="profile-item mat-subheading-1" *ngFor="let profile of profiles">
+            <img class="profile-item-image" src="assets/profile.png">
             {{profile.nick}}
         </mat-card>
     </div>

@@ -9,5 +9,14 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: $background-light
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $primary-base;
 }

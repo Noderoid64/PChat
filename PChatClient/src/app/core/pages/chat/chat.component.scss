@@ -18,14 +18,17 @@
     .chat-header {
         height: 10%;
         width: 100%;
-        background-color: $primary-dark;
+        background-color: $primary-base;
         border-top-right-radius: $materia-border-radius;
         border-top-left-radius: $materia-border-radius;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: center;
         mat-icon {
             margin-right: 16px;
+        }
+        .chat-header-left-side {
+            margin-left: 16px;
         }
     }
     .chat-body {

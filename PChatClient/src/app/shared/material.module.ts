@@ -10,6 +10,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
     exports: [
@@ -22,7 +24,9 @@ import { MatMenuModule } from '@angular/material/menu';
         MatFormFieldModule,
         MatIconModule,
         DragDropModule,
-        MatMenuModule
+        MatMenuModule,
+        MatDialogModule,
+        MatTableModule
     ],
 })
 export class MaterialModule { }
