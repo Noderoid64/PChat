@@ -24,7 +24,7 @@ export class GoogleFacadeService {
         return this.googleWebService.getGoogleProfileByToken(token, this.accessTokenParam).toPromise();
     }
 
-    private getToken(): string | null {
+    public getToken(): string | null {
         let token = this.oauthService.getAccessTokenFromUrl(window.location.href, this.accessTokenParam);
         console.log(window.location.href);
         console.log(token);

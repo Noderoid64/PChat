@@ -13,15 +13,15 @@ export class ProfileWebService {
     constructor(private httpClient: HttpClient) { }
 
     public getProfileById(id: number): Observable<Profile> {
-        return this.httpClient.get<Profile>(environment.baseUrl + this.profileUrl + id);
+        return this.httpClient.get<Profile>(environment.baseServerUrl + this.profileUrl + id);
     }
 
     public getProfileByGoogleId(id: string): Observable<Profile> {
-        return this.httpClient.get<Profile>(environment.baseUrl + this.profileUrl + 'google?id=' + id);
+        return this.httpClient.get<Profile>(environment.baseServerUrl + this.profileUrl + 'google?id=' + id);
     }
 
     public createProfileByGoogle(profile: GoogleProfile): Observable<Profile> {
-        return this.httpClient.put<Profile>(environment.baseUrl + this.profileUrl + 'google', {
+        return this.httpClient.put<Profile>(environment.baseServerUrl + this.profileUrl + 'google', {
             id: profile.id,
             FirstName: profile.firstName
         });
