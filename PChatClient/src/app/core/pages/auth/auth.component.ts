@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OAuthService} from '../../services/oauth.service';
+import { GoogleFacadeService } from '../../services/google-facade.service';
 
 @Component({
   selector: 'app-auth',
@@ -8,13 +8,13 @@ import { OAuthService} from '../../services/oauth.service';
 })
 export class AuthComponent implements OnInit {
 
-  constructor(private oAuthService: OAuthService) { }
+  constructor(private googleFacase: GoogleFacadeService) { }
 
   ngOnInit(): void {
   }
 
   public googleOAuthClick(): void {
-    this.oAuthService.init();
+    this.googleFacase.openGoogleAuthPage();
   }
 
 }

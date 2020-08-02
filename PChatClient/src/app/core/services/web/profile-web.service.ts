@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Profile } from '../model/profile.model';
-import { GoogleProfile } from '../model/google-profile.model';
-import { environment } from '../../../environments/environment';
+import { Profile } from '../../model/profile.model';
+import { GoogleProfile } from '../../model/google-profile.model';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({providedIn: 'root'})
 export class ProfileWebService {
@@ -22,8 +22,8 @@ export class ProfileWebService {
 
     public createProfileByGoogle(profile: GoogleProfile): Observable<Profile> {
         return this.httpClient.put<Profile>(environment.baseUrl + this.profileUrl + 'google', {
-            id: profile.names[0].metadata.source.id,
-            FirstName: profile.names[0].givenName
+            id: profile.id,
+            FirstName: profile.firstName
         });
     }
 }

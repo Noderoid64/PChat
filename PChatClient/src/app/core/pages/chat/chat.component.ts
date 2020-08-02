@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChatFacadeService } from 'app/core/services/chat-facade.service';
+import { ChatFacadeService } from '../../services/chat-facade.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddProfileDialogComponent } from './components/add-profile-dialog/add-profile-dialog.component';
 
