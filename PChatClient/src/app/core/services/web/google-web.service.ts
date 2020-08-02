@@ -24,8 +24,8 @@ export class GoogleWebService {
             .addSegment(this.oauthUrl)
             .addQueryParam('client_id', environment.clientId)
             .addQueryParam('scope', this.scope)
-            .addQueryParam('redirect_uri', environment.redirectUri)
             .addQueryParam('response_type', 'token')
+            .addQueryParam('redirect_uri', environment.redirectUri)
             .build();
         console.log(url);
         window.open(url);
@@ -39,7 +39,6 @@ export class GoogleWebService {
             .addQueryParam(accessTokenParam, token)
             .build();
             // TODO map logic should be in separate service
-            console.log(url);
             return this.httpClient.get<GoogleProfileDto>(url).pipe(
                 map((val: GoogleProfileDto) => {
                     return {

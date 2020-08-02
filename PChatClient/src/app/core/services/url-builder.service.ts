@@ -54,6 +54,8 @@ export class UrlBuilderService {
 
     private prepareSegment(value: string): string {
         value = value.replace(this.SLASH + this.SLASH, this.SLASH);
+        value = value.replace('http:/', 'http://');
+        value = value.replace('https:/', 'https://');
         if (value[0] === this.SLASH) {
             value = value.substr(1, value.length - 1);
         }

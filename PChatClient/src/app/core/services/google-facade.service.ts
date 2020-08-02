@@ -27,7 +27,7 @@ export class GoogleFacadeService {
     private getToken(): string | null {
         let token = this.oauthService.getAccessTokenFromUrl(window.location.href, this.accessTokenParam);
         console.log(window.location.href);
-        console.log(this.accessTokenParam);
+        console.log(token);
         if (token) {
             this.localStorage.set(this.accessTokenParam, token);
         } else {
