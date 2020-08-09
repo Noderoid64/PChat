@@ -4,10 +4,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Infrastructure.Db.Entities
 {
-    [Table("profile")]
-    public class ProfileChatRelationEntity : BaseEntity
+    [Table("profile_chat")]
+    public class ProfileChatRelationEntity
     {
+        [Column("profile_id")]
         public int ProfileId { get; set; }
+        [Column("chat_id")]
         public int ChatId { get; set; }
 
         public virtual ProfileEntity Profile { get; set; }

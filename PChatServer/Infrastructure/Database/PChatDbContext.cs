@@ -14,25 +14,30 @@ namespace Infrastructure.Db
         public DbSet<ChatEntity> Chats { get; set; }
         public DbSet<MessageEntity> Messages { get; set; }
         public DbSet<ProfileEntity> Profiles { get; set; }
-        public DbSet<ProfileRelationEntity> ProfileRelations { get; set; }
+        public DbSet<ProfileChatRelationEntity> ProfileChatRelations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ChatEntity>()
                 .ToTable("chat");
 
+            modelBuilder.Entity<ProfileChatRelationEntity>()
+                .HasKey(p => new {p.ChatId, p.ProfileId});
+
+            modelBuilder.Entity<ProfileChatRelationEntity>()
+                .HasOne(p => p.Chat)
+                .WithMany(p => p.ProfileRelations)
+                .HasForeignKey(p => p.ChatId);
+                
+            modelBuilder.Entity<ProfileChatRelationEntity>()
+                .HasOne(p => p.Profile)
+                .WithMany(p => p.ChatRelations)
+                .HasForeignKey(p => p.ProfileId);
+
             modelBuilder.Entity<MessageEntity>()
                 .ToTable("message")
                 .HasOne(p => p.Chat)
                 .WithMany(p => p.Messages);
-
-            modelBuilder.Entity<ProfileRelationEntity>()
-                .ToTable("profile_profile")
-                .HasKey(e => new {e.FromId, e.ToId });
-            modelBuilder.Entity<ProfileRelationEntity>()
-                .HasOne(e => e.ProfileFrom)
-                .WithMany(e => e.FriendRelations)
-                .HasForeignKey(e => e.FromId);
         }
     }
 }

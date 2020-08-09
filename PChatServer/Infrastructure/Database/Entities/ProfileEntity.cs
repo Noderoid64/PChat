@@ -16,6 +16,6 @@ namespace Infrastructure.Db.Entities
         [Column("google_id")]
         public String GoogleId { get; set; }
 
-        public ICollection<ProfileRelationEntity> FriendRelations { get; set;}
+        public ICollection<ProfileChatRelationEntity> ChatRelations { get; set;}
     }
 }

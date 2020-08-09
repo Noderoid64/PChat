@@ -29,9 +29,11 @@ namespace PChatServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
+            services.AddMvc().AddNewtonsoftJson();
             services.AddScoped(typeof(GoogleProfileDtoAssembler));
             services.AddScoped(typeof(ProfileRepository));
+            services.AddScoped(typeof(ChatRepository));
             services.AddDbContext<PChatDbContext>(options => options.UseNpgsql("Host=localhost;Port=5432;Database=PChat;Username=postgres;Password=qwertyui"));
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {

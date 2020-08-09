@@ -9,5 +9,8 @@ namespace Infrastructure.Db.Entities
 
         public int ChatId { get; set; }
         public ChatEntity Chat { get; set; }
+
+        public int ProfileId { get; set; }
+        public ProfileEntity author { get; set;}
     }
 }
